@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require bootstrap-sprockets
+//= require_tree 
+$(document).ready(function (){
+
+	$("#navlogo img").hide().fadeIn().animate({width:"80px"}, 700);
+	$("a").hover(function(){
+		$(this).animate({opacity: 0.7}, 150).animate({opacity: 1.0},150)
+	});
+});
