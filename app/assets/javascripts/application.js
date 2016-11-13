@@ -17,8 +17,26 @@
 //= require_tree 
 $(document).ready(function (){
 
-	$("#navlogo img").hide().fadeIn().animate({width:"80px"}, 700);
+	$("#navlogo img").animate({width:"80px"}, 700);
 	$("a").hover(function(){
 		$(this).animate({opacity: 0.7}, 150).animate({opacity: 1.0},150)
 	});
+	$(".introduction").hide().fadeIn();
+	$(".introduction p").hide().fadeIn(3000)
+	$(".banner").hide().fadeIn(3000)
+	$(".nav-item, #socmed").hide().fadeIn(3000).animate({opacity:.4},2500).animate({opacity:1.0},1000)
+
+
+	for (i=0;i<100;i++){
+		$("#navlogo img").animate({opacity:0.3},4000).animate({opacity:1.0},2000);
+	}
+
+	$("window").scroll(function(){
+		$(".aboutme").css("display").fadeIn();
+	});
+
+	for (i=0;i<100;i++){
+		$("#scrolldown").animate({width: '-=30'},1500).animate({width: '+=30'},1500).animate({width:'+=0'},2000);
+	}
+
 });
