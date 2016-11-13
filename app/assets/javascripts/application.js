@@ -11,10 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require tether
+//= require jquery.waypoints
+//= require jquery-ui
+//= require infinite
+//= require inview
+//= require sticky
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-sprockets
-//= require_tree 
+
 $(document).ready(function (){
 
 	$("#navlogo img").animate({width:"80px"}, 700);
@@ -39,4 +45,15 @@ $(document).ready(function (){
 		$("#scrolldown").animate({width: '-=30'},1500).animate({width: '+=30'},1500).animate({width:'+=0'},2000);
 	}
 
+	var $aboutme = $('.aboutme')
+
+	$aboutme.waypoint(function() {
+		$('.aboutme').animate({backgroundColor: '#F6B352'}, 1000);
+		console.log('WAYPOINT!');
+		
+	}, { offset: '50%'});
+	
+
 });
+
+

@@ -10,26 +10,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar-fixed-top row">
-		<ul class="navbar">
-			<li id="navlogo"> <%= image_tag("logo.png", :alt => "logo") %></li>
-			<li class="nav-item"> <%= link_to "about" %> </li>
-			<li class="nav-item"> <%= link_to "portfolio" %> </li>
-			<li class="nav-item"> <%= link_to "blog" %> </li>
-			<li class="nav-item"> <%= link_to "contact" %> </li>
-			<li id="socmed"> <%= image_tag("twitter.png", :alt => "logo") %></li>
-			<li id="socmed"> <%= image_tag("linkedin.png", :alt => "logo") %></li>
-			<li id="socmed"> <%= image_tag("github.png", :alt => "logo") %></li>
-			<li id="socmed"> <%= image_tag("facebook.png", :alt => "logo") %></li>
-		</ul>
-	</div>
-	<div class="banner">
-		<div class="gradient">
-		<div class="yield">
-				<%= yield %>
+	<div class="wrapper">
+		<div class="navbar">
+			<ul class="navbar">
+				<li id="navlogo"> <%= image_tag("logo.png", :alt => "logo") %></li>
+				<li class="nav-item"> <%= link_to "about" %> </li>
+				<li class="nav-item"> <%= link_to "portfolio" %> </li>
+				<li class="nav-item"> <%= link_to "blog" %> </li>
+				<li class="nav-item"> <%= link_to "contact" %> </li>
+				<li id="socmed"> <%= image_tag("twitter.png", :alt => "logo") %></li>
+				<li id="socmed"> <%= image_tag("linkedin.png", :alt => "logo") %></li>
+				<li id="socmed"> <%= image_tag("github.png", :alt => "logo") %></li>
+				<li id="socmed"> <%= image_tag("facebook.png", :alt => "logo") %></li>
+			</ul>
 		</div>
-		</div>	
-	
+		<div class="banner">
+			<div class="gradient">
+			<div class="yield">
+					<%= yield %>
+			</div>
+			</div>	
+		
+		</div>
 	</div>
 </body>
 </html>
