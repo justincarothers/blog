@@ -45,15 +45,33 @@ $(document).ready(function (){
 		$("#scrolldown").animate({width: '-=30'},1500).animate({width: '+=30'},1500).animate({width:'+=0'},2000);
 	}
 
-	var $aboutme = $('.aboutme')
+	var $aboutme = $('.aboutme');
+	$('.aboutme h1, .aboutme li').hide();
 
 	$aboutme.waypoint(function() {
-		$('.aboutme').animate({backgroundColor: '#F6B352'}, 1000);
-		console.log('WAYPOINT!');
-		
-	}, { offset: '50%'});
-	
+		$('.aboutme').animate({backgroundColor: '#fff'}, 600);
+		$('.navbar').animate({backgroundColor: '#FFBC42'}, 600);
+		$(".navbar a").css('color', 'black');
 
+
+		$('.aboutme h1, .aboutme li').fadeIn(1000);
+	}, { offset: '50%'});
+
+	/*=====================================*/
+
+
+	$('.portfolio').waypoint(function(){
+		$('.portfolio').animate({backgroundColor: '#71EEB8'}, 1000);
+		$('.navbar').animate({backgroundColor: '#EE7785'}, 1000);
+		$(".navbar a").css('color', 'white');
+	}, { offset: '50%'});
+
+	/* =================PROGRESS BAR=============== */
+	$( function() {
+    	$( "#progressbar" ).progressbar({
+      		value: 37
+    	});
+  	});
 });
 
 

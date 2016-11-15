@@ -60,6 +60,8 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    delayed_job (4.1.2)
+      activesupport (>= 3.0, < 5.1)
     erubis (2.7.0)
     execjs (2.7.0)
     globalid (0.3.7)
@@ -89,6 +91,8 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+    progress_job (0.0.4)
+      delayed_job
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -172,6 +176,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
+  progress_job
   rails (= 5.0.0.rc2)
   rails-assets-tether (>= 1.1.0)!
   sass-rails (~> 5.0)

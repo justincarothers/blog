@@ -1,8 +1,11 @@
 @import "bootstrap";
 
+
 /*
+ *= require 'css3-progress-bar'
  *= require jquery-ui
- */
+ *= require 'css3-progress-bar'
+*/
 
 body {
 	background-color: white;
@@ -43,10 +46,10 @@ a {
 
 }
 .navbar img {
-	max-width: 1200px;
+	max-width: 120px;
 }
 #navlogo {
-	margin-top: 15px;
+	margin-top: 10px;
 	float:left;
 }
 #socmed img, #socmed {
@@ -62,7 +65,7 @@ a {
 	padding-right:30px;
 }
 .introduction h1 {
-	font-size:100px;
+	font-size: 92px;
 	text-align: center;
 }
 .banner {
@@ -103,17 +106,41 @@ body {
 .aboutme {
 	text-align: center;
 	font-family: 'Raleway', cursive;
-	height: 900px;
-	background-color: white;
-	color: white;
+	min-height: 900px;
+	background-color: black;
+	color: black;
+	list-style-type: none;
+	text-align: center;
+
+}
+.aboutme {
+	font-family: 'Poiret One', cursive;
+	font-size: 20px;
+	float:left;
+}
+.skill img {
+	float:left;
+	display: inline;
+	width:35px;
+	height: 35px;
 }
 .bigletter {
-	fontn-size:128px;
-	text-shadow: 1px 1px #000;
+	font-size:128px;
+}
+.portfolio {
+	min-height: 900px;
+	background-color: black;
+}
+.bio p, .skills p {
+	font-size: 18px;
+	float:left;
+}
+#portrait {
+	max-width:150px;
 }
 /*##############################@MEDIA###############################################*/
 
-@media (max-width: 1111px) {
+@media (max-width: 1321px) {
 	#socmed img {
 		display: none;
 	}
@@ -134,7 +161,7 @@ body {
 	}
 }
 
-@media (max-width:620px) {
+@media (max-width:720px) {
 	.navbar .nav-item {
 		margin-top: 0px;
 
@@ -143,8 +170,11 @@ body {
 	.introduction p {
 		font-size: 24px;
 	}
-	.navbar {
-		height:80px;
+}
+@media (max-width:500px) {
+	.skill img {
+		width:25px;
+		height:25px;
 	}
 }
 
