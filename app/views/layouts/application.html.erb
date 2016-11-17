@@ -4,34 +4,47 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-  <title>Photo</title>
+<link rel="shortcut icon" href="logo.png" />
+  <title>Justin Carothers | Web Developer</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<div class="wrapper">
-		<div class="navbar">
-			<ul class="navbar">
-				<li id="navlogo"> <%= image_tag("logo.png", :alt => "logo") %></li>
-				<li class="nav-item"> <%= link_to "about" %> </li>
-				<li class="nav-item"> <%= link_to "portfolio" %> </li>
-				<li class="nav-item"> <%= link_to "blog" %> </li>
-				<li class="nav-item"> <%= link_to "contact" %> </li>
-				<li id="socmed"> <%= image_tag("twitter.png", :alt => "logo") %></li>
-				<li id="socmed"> <%= image_tag("linkedin.png", :alt => "logo") %></li>
-				<li id="socmed"> <%= image_tag("github.png", :alt => "logo") %></li>
-				<li id="socmed"> <%= image_tag("facebook.png", :alt => "logo") %></li>
+<body>	
+	<div class="nav-bar">
+		<ul class="nav-bar">
+			<li id="navlogo"> <a name='navbar' href='#introduction'><%= image_tag("logo.png", :alt => "logo") %></a></li>
+			<li class="nav-item"><a href='#about'>about</a> </li>
+			<li class="nav-item"><a href='#portfolio'>portfolio</a> </li>
+			<li class="nav-item"><a href='#blog'>blog</a></li>
+			<li class="nav-item"><a href='#contact'>contact</a></li>
+			<li id="socmed"> <%= image_tag("twitter.png", :alt => "logo") %></li>
+			<li id="socmed"> <%= image_tag("linkedin.png", :alt => "logo") %></li>
+			<li id="socmed"> <%= image_tag("github.png", :alt => "logo") %></li>
+			<li id="socmed"> <%= image_tag("facebook.png", :alt => "logo") %></li>
+		</ul>
+	</div>
+	<div class='yield'>		
+		<a name='introduction'></a>
+	</div>
+		<%= yield %>
+	<div class='contactme' style='height:70px;background-color:#5874c9;'>
+	<a class='anchor' name='contact'></a>
+		<div style='width:100%;height:100%'>
+
+			<!-- <h1 style='padding-top:40px;text-align:center;color: white;''><span style='font-family: Poiret One, cursive;text-align:center;background-color:#5874c9'></h1></span>
+			<br> -->
+			<ul class='soc-bot'>
+				<li> <%= image_tag("twitter.png", :alt => "logo") %></li>
+				<li> <%= image_tag("linkedin.png", :alt => "logo") %></li>
+				<li><%= image_tag("github.png", :alt => "logo") %></li>
+				<li> <%= image_tag("facebook.png", :alt => "logo") %></li>
 			</ul>
 		</div>
-		<div class="banner">
-			<div class="gradient">
-			<div class="yield">
-					<%= yield %>
-			</div>
-			</div>	
-		
-		</div>
 	</div>
+</div>
+			
 </body>
 </html>
+
+

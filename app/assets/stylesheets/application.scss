@@ -1,33 +1,35 @@
 @import "bootstrap";
-
-
 /*
- *= require 'css3-progress-bar'
  *= require jquery-ui
- *= require 'css3-progress-bar'
 */
-
 body {
-	background-color: white;
+	background-color: black;
 	list-style-type: none; 
 	margin: 0px;
 }
-.wrapper {
-	background-color:black;
+.nav-bar a {
+	color:white;
 }
-
 a {
 	color:white;
-	text-decoration: none;
-
 }
-.navbar {
+.container {
+	margin:0px;
+	max-width: 100%;
+}
+.responsive-image {
+	max-width: 100%;
+}
+.cell img {
+	display:block;
+	margin: 0px;
+}
+.nav-bar {
 	position: fixed;
   	top: 0;
   	left: 0;
-  	z-index: 9999;
   	width: 100%;
-  	height: 50px;
+  	height: 40px;
 	font-size: 30px;
 	font-family: 'Poiret One', cursive;
 	list-style-type: none; 
@@ -35,20 +37,20 @@ a {
 	color:white;
 	margin:0px;
 	top:0px;
-	z-index: 1000;
 	height: 92px;
 	text-align:center;
+	z-index: 1000;
 }
 .nav-item {
 	display:inline-block;
 	margin-right: 60px;
-	margin-top: 30px;
+	margin-top: 25px;
 
 }
-.navbar img {
+.nav-bar img {
 	max-width: 120px;
 }
-#navlogo {
+#navlogo img {
 	margin-top: 10px;
 	float:left;
 }
@@ -59,36 +61,71 @@ a {
 }
 #socmed {
 	margin-right: 30px;
-	margin-top: 30px;
+	padding-top: 30px;
 	float:right;
 	display: inline-block;
 	padding-right:30px;
 }
 .introduction h1 {
+	padding-top: 100px;
 	font-size: 92px;
 	text-align: center;
 }
-.banner {
+.soc-bot {
+	text-align:center;
+	padding-top:10px;
+	display:inline-flex;
+	float: right;
+	width:100%;
+	margin:auto;
+}
+.soc-bot img {
+	margin: auto;
+	width:50px;
+	height:50px;
+}
+.soc-bot li {
+	list-style-type: none; 
+	float:left;
+	margin: auto;
+}
+.soc-bot:hover img:not(:hover) {
+    opacity: .5;
+}
 
+a.anchor {
+    display: block;
+    position: relative;
+    top: -130px;
+    visibility: hidden;
+}
+.introduction {
 	background: url(stars.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+	background-size:120% 120%;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all 27s;
 }
+
+.introduction:hover,.contactme:hover {
+    background-size: 170% 150%;
+}
+.contactme {
+	padding-left: 20%;
+	padding-right:20%;
+}
+
 .gradient {
-	height:1200px;
-	background: linear-gradient(to bottom,  rgba(0,0,0,1) 4%,rgba(0,0,0,.5) 50%,rgba(0,0,0,1) 96%, rgba(255, 255, 255,.5)99%);
-}
-body {
-	margin:0px;
+	background: linear-gradient(to bottom,  rgba(0,0,0,1) 4%,rgba(0,0,0,.5) 50%,rgba(0,0,0,.7) 82%, rgba(0, 0, 0,.9)99%);
+	height:100%;
 }
 .introduction {
 	font-family: 'Raleway', cursive;
-	z-index: 1;
 	color:white;
-	padding-top:100px;
-	padding-bottom:0px;
-	height:960px;
+	
 }
 .introduction p {
 	font-size: 32px;
@@ -96,47 +133,52 @@ body {
 	margin-right:20%;
 	margin-top:0px;
 	text-align: center;
-}
-.introduction #iam {
-	font-size: 136px;
-}
-#scrolldown {
-	max-width: 60px;	
-}
+}	
 .aboutme {
+	padding-top: 0px;
+	padding-bottom: 70px;
 	text-align: center;
-	font-family: 'Raleway', cursive;
-	min-height: 900px;
 	background-color: black;
 	color: black;
 	list-style-type: none;
 	text-align: center;
-
-}
-.aboutme {
 	font-family: 'Poiret One', cursive;
 	font-size: 20px;
 	float:left;
+	min-height:800px;
+}
+.row {
+	padding:0;
+	margin:0;
 }
 .skill img {
 	float:left;
-	display: inline;
-	width:35px;
-	height: 35px;
+	display: inline-block;
+	width:30px;
+	height: 30px;
 }
-.bigletter {
-	font-size:128px;
-}
-.portfolio {
-	min-height: 900px;
-	background-color: black;
+.mywork {
+	min-height:800px;
 }
 .bio p, .skills p {
 	font-size: 18px;
 	float:left;
 }
 #portrait {
-	max-width:150px;
+	max-width:210px;
+	height:auto;
+}
+.blog img {
+	max-width: 300px;
+}
+.blog {
+	font-family: 'Poiret One', cursive;
+	color:black;
+}
+.blog p{
+	background-color: white;
+	border: solid;
+	border-color:rgba(222,222,222,.3);
 }
 /*##############################@MEDIA###############################################*/
 
@@ -144,25 +186,27 @@ body {
 	#socmed img {
 		display: none;
 	}
-	.navbar {
+	.nav-bar {
 		font-size: 28px;
 	}
 	.introduction p{
 	font-size: 28px;
-	margin-left: 18%;
-	margin-right:18%;
 	margin-bottom: 0px;
 	}
 	.introduction #iam, .introduction h1{
 		font-size: 84px;
 	}
-	li {
-		display: block;
+	.skill img {
+		width:25px;
+		height:25px;
 	}
 }
 
-@media (max-width:720px) {
-	.navbar .nav-item {
+@media (max-width:980px) {
+	#skills {
+		text-align: center;
+	}
+	.nav-bar .nav-item {
 		margin-top: 0px;
 
 		font-size: 18px;
@@ -170,11 +214,34 @@ body {
 	.introduction p {
 		font-size: 24px;
 	}
-}
-@media (max-width:500px) {
 	.skill img {
-		width:25px;
-		height:25px;
+		width:20px;
+		height:20px;
 	}
 }
+@media screen and (min-width: 600px) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .cell {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .cell {
+    width: calc(100% / 3);
+  }
+}
+@media screen and (min-width: 600px) {
+  .cell {
+    width: calc(50% - 2rem);
+  }
+}
 
+@media screen and (min-width: 1000px) {
+  .cell {
+    width: calc(33.3333% - 2rem);
+  }
+}

@@ -23,8 +23,10 @@
 
 $(document).ready(function (){
 
+	var scrollTimer = 0;
+
 	$("#navlogo img").animate({width:"80px"}, 700);
-	$("a").hover(function(){
+	$(".nav-bar a").hover(function(){
 		$(this).animate({opacity: 0.7}, 150).animate({opacity: 1.0},150)
 	});
 	$(".introduction").hide().fadeIn();
@@ -36,42 +38,63 @@ $(document).ready(function (){
 	for (i=0;i<100;i++){
 		$("#navlogo img").animate({opacity:0.3},4000).animate({opacity:1.0},2000);
 	}
+	for (i=0;i<200;i++){
+		$("#scrolldown")
+		.animate({marginTop: '+=30'},1500)
+		.animate({marginTop: '-=30'},1500);
+		if (scrollTimer <= 1) {
+			break;
+		} 
 
-	$("window").scroll(function(){
-		$(".aboutme").css("display").fadeIn();
-	});
-
-	for (i=0;i<100;i++){
-		$("#scrolldown").animate({width: '-=30'},1500).animate({width: '+=30'},1500).animate({width:'+=0'},2000);
-	}
+	};
 
 	var $aboutme = $('.aboutme');
-	$('.aboutme h1, .aboutme li').hide();
+	$('.aboutme h1, .aboutme img').hide();
 
 	$aboutme.waypoint(function() {
-		$('.aboutme').animate({backgroundColor: '#fff'}, 600);
-		$('.navbar').animate({backgroundColor: '#FFBC42'}, 600);
-		$(".navbar a").css('color', 'black');
+
+		$('.aboutme').animate({backgroundColor: '#f9f9f9'}, 600);
+		$('.nav-bar').animate({backgroundColor: '#5874c9'}, 600);
+		// $(".nav-bar a").css('color', 'black');
+		scrollTimer += 100;
 
 
-		$('.aboutme h1, .aboutme li').fadeIn(1000);
+		$('.aboutme h1,.aboutme img').fadeIn(1000)
+		}, { offset: '50%'});
+
+
+
+	$('.mywork img').animate({marginLeft: '-2400'},1);
+	$('.mywork h1').hide();
+
+	$('.mywork').waypoint(function(){
+
+		$('.mywork').animate({backgroundColor: '#d8d8d8'}, 1000);
+		$('.mywork h1').fadeIn(), 1200;
+		// $('.nav-bar').animate({backgroundColor: '#EE7785'}, 1000);
+		$('.mywork img').animate({marginLeft: '0'},500);
+		// $(".nav-bar a").css('color', 'white');
 	}, { offset: '50%'});
 
-	/*=====================================*/
+	// ========== SMOOTH SCROLLING ===========
+
+	$('a[href^="#"]').click(function(e){
+		var target = $(this).attr('href');
+		var strip = target.slice(1);
+		var anchor = $("a[name='" + strip +"'");
+
+		e.preventDefault();
+
+		$('html, body').animate({
+
+			scrollTop: anchor.offset( ).top
+
+		}, 'slow')
 
 
-	$('.portfolio').waypoint(function(){
-		$('.portfolio').animate({backgroundColor: '#71EEB8'}, 1000);
-		$('.navbar').animate({backgroundColor: '#EE7785'}, 1000);
-		$(".navbar a").css('color', 'white');
-	}, { offset: '50%'});
+	});
 
-	/* =================PROGRESS BAR=============== */
-	$( function() {
-    	$( "#progressbar" ).progressbar({
-      		value: 37
-    	});
-  	});
+
 });
 
 
