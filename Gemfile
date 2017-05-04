@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 gem 'waypoints_rails'
-gem 'sqlite3'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -48,3 +47,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether'
 end
 
+group :development do
+	gem 'sqlite3'
+end
+group :development do
+	gem 'pg'
+	gem 'rails_12factor'
+end
