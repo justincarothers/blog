@@ -48,6 +48,7 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
@@ -73,6 +74,11 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+
+  config.serve_static_assets = true
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+  config.assets.compile = true
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
